@@ -1,24 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import { Button } from '@material-ui/core';
+
+const theme = createTheme({
+  // palette: {
+  //   primary: {
+  //     main: purple[500],
+  //   },
+  //   secondary: {
+  //     main: green[500],
+  //   },
+  // },
+  typography: {
+    fontFamily: [
+      'Roboto',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
+});
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={theme}>
+        <Button> This is dampel</Button>
+      </ThemeProvider>
     </div>
   );
 }
